@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #202124;
+  font-family: "PT Sans", sans-serif;
+}
+.head {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.438);
+  padding-bottom: 10px;
+}
+.head img {
+  width: 40px;
+  margin: 10px 5px 0 10px;
+}
+h1 {
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.87);
+  letter-spacing: 3px;
+}
+
+#admore {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+
+.arrow-button {
+  display: flex;
+  color: #c2ffe9;
+  background-color: #41331c;
+  padding: 10px 16px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  cursor: pointer;
+  align-items: center;
+  font-size: 14px;
+  border: 1px;
+}
+
+.arrow-button > .arrow {
+  width: 6px;
+  height: 6px;
+  border-right: 2px solid #c2ffe9;
+  border-bottom: 2px solid #c2ffe9;
+  position: relative;
+  transform: rotate(-45deg);
+  margin: 0 6px;
+  transition: all 0.3s ease;
+}
+
+.arrow-button > .arrow::before {
+  display: block;
+  background-color: currentColor;
+  width: 3px;
+  transform-origin: bottom right;
+  height: 2px;
+  position: absolute;
+  opacity: 0;
+  bottom: calc(-2px / 2);
+  transform: rotate(45deg);
+  transition: all 0.3s ease;
+  content: "";
+  right: 0;
+}
+
+.arrow-button:hover > .arrow {
+  transform: rotate(-45deg) translate(4px, 4px);
+  border-color: text-hover-color;
+}
+
+.arrow-button:hover > .arrow::before {
+  opacity: 1;
+  width: 8px;
+}
+
+.arrow-button:hover {
+  background-color: #57575860;
+  color: #fff;
+}
+.note {
+  display: inline-flex;
+  flex-wrap: wrap;
+  /* border: 2px solid red; */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 300px;
+  height: 250px;
+  margin: 25px;
+  border: 1px solid #4a4c527a;
+  border-radius: 8px;
+  box-shadow: 10px 10px 57px -11px rgba(0, 0, 0, 0.75);
+}
+.btns {
+  display: flex;
+  margin-bottom: 10px;
+}
+#edit {
+  margin-right: 20px;
+}
+#edit {
+  background-color: #202124;
+  border: none;
+  font-size: 20px;
+}
+#delete {
+  background-color: #202124;
+  border: none;
+  font-size: 20px;
+}
+#delete:hover {
+  background-color: #6767683a;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+}
+#edit:hover {
+  background-color: #6767683a;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+}
+#textarea {
+  background-color: #41331c;
+  font-weight: 900;
+  color: white;
+  overflow: hidden;
+}
+.hidden{
+    display: none;
+}
