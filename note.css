@@ -107,13 +107,17 @@ h1 {
   margin-right: 20px;
 }
 #edit {
-  background-color: #202124;
+  background-color: hsl(225, 6%, 13%);
+  color: #A0BBD6;
   border: none;
   font-size: 20px;
+  cursor: pointer;
 }
 #delete {
   background-color: #202124;
   border: none;
+  color: #A0BBD6;
+cursor: pointer;
   font-size: 20px;
 }
 #delete:hover {
@@ -129,7 +133,7 @@ h1 {
   height: 35px;
 }
 #textarea {
-  background-color: #41331c;
+  background-color: #34343593;
   font-weight: 900;
   color: white;
   overflow: hidden;
@@ -138,7 +142,14 @@ h1 {
     display: none;
 }
 
-
+#divtext{
+overflow-x: hidden;
+width: 230px;
+height: 150px;
+color: #c2ffe9;
+font-size: 20px;
+cursor: pointer;
+}
 
 
 
