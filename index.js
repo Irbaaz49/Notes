@@ -3,9 +3,28 @@
 const addNote = document.getElementById('addmore');
 
 
+
+//localStorsge
+const updateLS = () => {
+
+    //getting all the textareas added using addnote btn
+    const textAreas = document.querySelectorAll('textarea');
+
+    const Notes = [];
+    textAreas.forEach((addedNote) => {
+
+        return Notes.push(addedNote.value);
+
+    })
+    localStorage.setItem('TheKeyNote', JSON.stringify(Notes));
+
+}
+
+
+
 //creating addNotes function
 
-const addNotes = (text = '') => {
+const addNotes = (text='') => {
 
     //Add button 
 
@@ -19,8 +38,8 @@ const addNotes = (text = '') => {
 <button id="edit"><i class="fa-solid fa-pen-to-square"></i></button>
 <button id="delete"><i class="fa-solid fa-trash-can"></i></button>
 </div>
-<div id="divtext" class ="main ${text ? "" : "hidden"}"></div>
-<textarea name="text" class="${text ? "hidden" : ""}" id="textarea" cols="30" rows="10">`;
+<div id="divtext" class ="main ${text ? "" : "hidden"}">${text}</div>
+<textarea name="text" class="${text ? "hidden" : ""}" id="textarea" cols="30" rows="10">${text}</textarea>`;
 
     //inserting html data into the div element 
 
@@ -28,9 +47,6 @@ const addNotes = (text = '') => {
 
 
 
-    //appending the inserted html data and the div to the body
-
-    document.body.appendChild(notes);
 
 
 
@@ -42,7 +58,8 @@ const addNotes = (text = '') => {
 
     // Adding event listener to btn and removing the child node from the body
     deleBtn.addEventListener('click', () => {
-        document.body.removeChild(notes);
+        notes.remove();
+        updateLS();
     })
 
 
@@ -64,10 +81,27 @@ const addNotes = (text = '') => {
         const value = e.target.value;
 
         divText.innerHTML = value;
+
+        updateLS();
     })
 
+    //appending the inserted html data and the div to the body
+
+    document.body.appendChild(notes);
 }
 
+
+//getting local storage 
+const Finalnotes = JSON.parse(localStorage.getItem('TheKeyNote'));
+
+
+// if notes are present(true) then displaying the note, and passing an parameter in the addNotes() function 'text' = ele
+if(Finalnotes){
+    Finalnotes.forEach((ele)=>{
+        console.log(ele);
+        addNotes(ele);
+    })
+}
 
 
 //Adding event listember to addnote
