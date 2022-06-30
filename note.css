@@ -106,99 +106,46 @@ h1 {
 #edit {
   margin-right: 20px;
 }
-#edit {
-  background-color: hsl(225, 6%, 13%);
-  color: #A0BBD6;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
+#complete{
+  margin-left: 20px;
 }
-#delete {
+#delete,
+#complete,
+#edit {
   background-color: #202124;
   border: none;
-  color: #A0BBD6;
-cursor: pointer;
+  color: #a0bbd6;
+  cursor: pointer;
   font-size: 20px;
+  
 }
-#delete:hover {
+#delete:hover ,#complete:hover, #edit:hover {
   background-color: #6767683a;
   border-radius: 50%;
   width: 35px;
   height: 35px;
 }
-#edit:hover {
-  background-color: #6767683a;
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
-}
+
 #textarea {
   background-color: #34343593;
   font-weight: 900;
   color: white;
   overflow: hidden;
 }
-.hidden{
-    display: none;
+.hidden {
+  display: none;
 }
 
-#divtext{
-overflow-x: hidden;
-width: 230px;
-height: 150px;
-color: #c2ffe9;
-font-size: 20px;
-cursor: pointer;
+#divtext {
+  overflow-x: hidden;
+  width: 230px;
+  height: 150px;
+  color: #c2ffe9;
+  font-size: 20px;
+  cursor: pointer;
+}
+.strike{
+  text-decoration: line-through;
 }
 
-
-
-
-/* 
-
-
-// #202124
-const addmore = document.getElementById('addmore');
-
-
-const addNote = (text = '')=>{
-
-const note = document.createElement('div')
-note.classList.add('note');
-
-const htmlData = `<div class="btns">
-<button id="edit"><i class="fa-solid fa-pen-to-square"></i></button>
-<button id="delete"><i class="fa-solid fa-trash-can"></i></button>
-</div>
-<div id="divtext"></div>
-<textarea name="text" id="textarea" cols="30" rows="10"></textarea>`;
-
-note.insertAdjacentHTML('afterbegin',htmlData);
-
-
-const edit = note.querySelector('#edit');
-const DelteBtn = note.querySelector('#delete');
-const textarea = note.querySelector('#textarea');
-const main = note.querySelector('#divtxt');
-
-
-
-
-//deleting the note
-DelteBtn.addEventListener('click',function(){
-    note.remove();
-})
-
-
-
-
-
-
-
-
-
-
-document.body.appendChild(note);
-//appends the node as the last child of a node
-}
-addmore.addEventListener('click', ()=>addNote()); */
+/* text-decoration: line-through; */

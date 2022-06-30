@@ -35,8 +35,10 @@ const addNotes = (text='') => {
     notes.classList.add('notes');
 
     const HtmlData = `<div class="btns">
-<button id="edit"><i class="fa-solid fa-pen-to-square"></i></button>
-<button id="delete"><i class="fa-solid fa-trash-can"></i></button>
+<button id="edit" title="edit/save" ><i class="fa-solid fa-pen-to-square"></i></button>
+<button id="delete" title="delete" ><i class="fa-solid fa-trash-can"></i></button>
+<button id="complete" title="completed" ><i class="fa-solid fa-check"></i></button>
+
 </div>
 <div id="divtext" class ="main ${text ? "" : "hidden"}">${text}</div>
 <textarea name="text" class="${text ? "hidden" : ""}" id="textarea" cols="30" rows="10">${text}</textarea>`;
@@ -74,6 +76,8 @@ const addNotes = (text='') => {
     editBtn.addEventListener('click', () => {
         divText.classList.toggle('hidden');
         textArea.classList.toggle('hidden');
+    divText.classList.remove('strike');
+
     })
 
     textArea.addEventListener('change', (e) => {
@@ -84,6 +88,15 @@ const addNotes = (text='') => {
 
         updateLS();
     })
+
+
+//completed btn 
+const completed = notes.querySelector('#complete');
+completed.addEventListener('click',()=>{
+    divText.classList.toggle('strike');
+})
+
+
 
     //appending the inserted html data and the div to the body
 
